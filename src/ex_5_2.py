@@ -21,6 +21,16 @@ if __name__ == "__main__":
     INFILE = root_dir / "data" / "ex_5_2-data.csv"
     OUTFILE = root_dir / "outputs" / "ex_5_2-processed.csv"
 
-    # Complete the data processing steps using numpy here.
+    # Load data from INFILE into a numpy array
+    data = np.loadtxt(INFILE, delimiter=',')
 
-    # Save the output to OUTFILE using numpy routines.
+    # Process the data: shift mean to 0 and scale standard deviation to 1
+    mean_data = np.mean(data, axis=0)  # Compute mean along columns
+    std_data = np.std(data, axis=0)    # Compute standard deviation along columns
+
+    processed = (data - mean_data) / std_data  # Normalize the data
+
+    # Save the processed data to OUTFILE using numpy.savetxt
+    np.savetxt(OUTFILE, processed, delimiter=',', fmt='%.6f')
+
+    print(f"Processed data saved to {OUTFILE}")
