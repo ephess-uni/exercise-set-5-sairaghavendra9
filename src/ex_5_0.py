@@ -1,6 +1,4 @@
 """ex_5_0.py"""
-
-
 def line_count(infile):
     """
     Counts the number of lines in the specified input file and prints the count.
