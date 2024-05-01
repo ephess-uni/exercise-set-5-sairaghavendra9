@@ -6,7 +6,7 @@ This module contains an entry point that:
 - writes the file to the output file argument
 """
 import numpy as np
-from argparse import ArgumentParser
+import argparse
 def process_data(infile, outfile):
     """
     Process the data from the input file `infile`, scale it to have a mean of 0 and standard deviation of 1,

@@ -8,8 +8,8 @@ import argparse
 def main(infile):
     line_count(infile)
 
-
 if __name__ == "__main__":
+    # Create ArgumentParser object
     parser = argparse.ArgumentParser(description="This program prints the number of lines in infile.")
     
     # Add a positional argument for the input file (infile)
